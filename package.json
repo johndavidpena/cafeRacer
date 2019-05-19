@@ -1,0 +1,28 @@
+{
+  "name": "cafe-racer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass src/sass/main.scss src/stylesheets/style.css -w",
+    "compile:sass": "node-sass src/sass/main.scss src/stylesheets/style.comp.css",
+    "concat:css": "concat -o src/stylesheets/style.concat.css src/stylesheets/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/stylesheets/style.concat.css -o src/stylesheets/style.prefix.css",
+    "compress:css": "node-sass src/stylesheets/style.prefix.css src/stylesheets/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "concat": "^1.0.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
+  },
+  "dependencies": {}
+}

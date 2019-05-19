@@ -1,0 +1,166 @@
+.pageOne {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $color-white-dark;
+
+  @include respond(tablet) {
+    text-align: center;
+  }
+}
+
+.pageOne__content {
+  // +1100px
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  height: 91vh;
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    margin: 0 auto;
+  }
+
+  &-text {
+    @include respond(tablet) {
+      text-align: center;
+    }
+
+    & h2 {
+      color: $color-black;
+      font-size: 5.5rem;
+      letter-spacing: 0.7rem;
+      line-height: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    & h3 {
+      color: $color-brown;
+      font-size: 2.6rem;
+      letter-spacing: 1.5rem;
+      line-height: 100%;
+    }
+
+    & div {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    & p {
+      font-size: 2rem;
+      color: $color-grey-dark;
+    }
+
+    & button {
+      width: 10rem;
+      border-radius: 0;
+      outline: none;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.2rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &-signup {
+      background: $color-black;
+      color: $color-white-dark;
+      margin-right: 1rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-learn {
+      background: $color-white-dark;
+      color: $color-black;
+
+      & svg {
+        vertical-align: top;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-product {
+    position: relative;
+
+    &-swipe-image1 {
+      @include absCenter;
+    }
+
+    &-swipe-image2 {
+      display: none;
+
+      @include absCenter;
+    }
+
+    &-swipe-image3 {
+      display: none;
+
+      @include absCenter;
+    }
+
+    &-image {
+      @include respond(phone) {
+        width: 75vw;
+      }
+    }
+
+    &-navDots {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 1rem;
+
+      position: fixed;
+      bottom: 20%;
+      transform: translate(-50%, -50%);
+
+      transition: all 0.2s ease-in-out;
+
+      @include respond(tablet) {
+        bottom: 9rem;
+      }
+
+      &-navDot {
+        background: $color-grey;
+        border-radius: 100%;
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+
+        &:first-child {
+          background: $color-brown;
+        }
+
+        &:hover {
+          background: $color-brown;
+        }
+      }
+    }
+  }
+
+  &-downArrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & svg {
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

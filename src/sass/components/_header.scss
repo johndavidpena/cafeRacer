@@ -1,0 +1,53 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  height: 9vh;
+  border-bottom: 1px solid $color-grey;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 1.15fr;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 1.7fr;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.header__left {
+  display: grid;
+  grid-template-columns: 1fr 1fr 6fr;
+  align-items: center;
+  justify-items: center;
+}
+
+#brandIcon {
+  cursor: pointer;
+}
+
+nav {
+  & ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    height: 9vh;
+
+    @include respond(phone) {
+      justify-items: center;
+    }
+  }
+
+  & li {
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  & svg {
+    cursor: pointer;
+  }
+}

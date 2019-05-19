@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1100 - 1800
+
+  @include respond(tablet) {
+    // 600 - 1100
+    font-size: 55%;
+  }
+
+  @include respond(phone) {
+    // 0 - 600
+    font-size: 38%;
+  }
+
+  @include respond(big-desktop) {
+    // 1800px +
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: $color-black;
+}
